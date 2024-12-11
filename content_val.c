@@ -6,7 +6,7 @@
 /*   By: sataskin <sataskin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:42:29 by sataskin          #+#    #+#             */
-/*   Updated: 2024/12/10 15:30:08 by sataskin         ###   ########.fr       */
+/*   Updated: 2024/12/11 12:24:36 by sataskin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,21 @@ static void print_ll(t_arg *ll)
 			printf("3d normalized orientation vectors are\nX = %f\nY = %f\nZ = %f\n", temp->coor3d.x, temp->coor3d.y, temp->coor3d.z);
 			printf("horizontal field view is = %i\n", temp->FOV);
 		}
+		if (temp->L == 1)
+		{
+			printf("\nnode %i is a light\n", i);
+			printf("coordinates are\nX = %f\nY = %f\nZ = %f\n", temp->coor.x, temp->coor.y, temp->coor.z);
+			printf("light brightness ratio is= %f\n", temp->bright);				
+		}
+		if (temp->sp == 1)
+		{
+			printf("\nnode %i is a sphere\n", i);
+			printf("coordinates are\nX = %f\nY = %f\nZ = %f\n", temp->coor.x, temp->coor.y, temp->coor.z);
+			printf("colors are\nR = %i\nG = %i\nB = %i\n", temp->color.R, temp->color.G, temp->color.B);
+			printf("diameter is= %i\n", temp->diameter);			
+		}
 		temp = temp->next;
+		i++;
 	}
 }
 
@@ -64,15 +78,9 @@ static void	get_values(char *line, t_minirt *rt)
 	else if (ft_strcmp(values[0], "C") == 0)
 		add_camera(values, rt);
 	else if (ft_strcmp(values[0], "L") == 0)
-	{
 		add_light(values, rt);
-		printf("added light\n");
-	}
 	else if (ft_strcmp(values[0], "sp") == 0)
-	{
-		printf("going to add sphere\n");
-		//add_sphere(values, rt);
-	}
+		add_sphere(values, rt);
 	else if (ft_strcmp(values[0], "pl") == 0)
 	{
 		printf("going to add plane\n");

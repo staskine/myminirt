@@ -6,7 +6,7 @@
 /*   By: sataskin <sataskin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 11:40:12 by sataskin          #+#    #+#             */
-/*   Updated: 2024/12/10 15:47:03 by sataskin         ###   ########.fr       */
+/*   Updated: 2024/12/11 12:23:47 by sataskin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,7 @@ void	check_valid(char *file);
 void	add_ambient(char **values, t_minirt *rt);
 void	add_camera(char **values, t_minirt *rt);
 void	add_light(char **values, t_minirt *rt);
+void	add_sphere(char **values, t_minirt *rt);
 
 
 /*		PARSING FUNCTIONS		*/
@@ -107,6 +108,7 @@ int		add_lighting_ratio(char *str, t_arg *new);
 int		add_coor(char *values, t_arg *new);
 int		add_threed(char *values, t_arg *new);
 int		add_horizontal(char *values, t_arg *new);
+int		add_diameter(char *str, t_arg *new);
 
 
 /*		MAKING LINKED lIST		*/
