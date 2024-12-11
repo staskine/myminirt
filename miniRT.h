@@ -6,7 +6,7 @@
 /*   By: sataskin <sataskin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 11:40:12 by sataskin          #+#    #+#             */
-/*   Updated: 2024/12/11 12:23:47 by sataskin         ###   ########.fr       */
+/*   Updated: 2024/12/11 12:31:52 by sataskin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ void	add_ambient(char **values, t_minirt *rt);
 void	add_camera(char **values, t_minirt *rt);
 void	add_light(char **values, t_minirt *rt);
 void	add_sphere(char **values, t_minirt *rt);
+void	add_plane(char **values, t_minirt *rt);
 
 
 /*		PARSING FUNCTIONS		*/

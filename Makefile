@@ -6,7 +6,7 @@
 #    By: sataskin <sataskin@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/29 17:03:00 by sataskin          #+#    #+#              #
-#    Updated: 2024/12/11 12:23:19 by sataskin         ###   ########.fr        #
+#    Updated: 2024/12/11 12:31:38 by sataskin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ LIBFT = $(LIBFTPATH)/libft.a
 SRCS = add_ambient.c \
 		add_camera.c \
 		add_light.c \
+		add_plane.c \
 		add_sphere.c \
 		colors.c \
 		content_val.c \

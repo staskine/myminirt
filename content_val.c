@@ -6,7 +6,7 @@
 /*   By: sataskin <sataskin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:42:29 by sataskin          #+#    #+#             */
-/*   Updated: 2024/12/11 12:24:36 by sataskin         ###   ########.fr       */
+/*   Updated: 2024/12/11 12:33:14 by sataskin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,13 @@ static void print_ll(t_arg *ll)
 			printf("colors are\nR = %i\nG = %i\nB = %i\n", temp->color.R, temp->color.G, temp->color.B);
 			printf("diameter is= %i\n", temp->diameter);			
 		}
+		if (temp->pl == 1)
+		{
+			printf("\nnode %i is a plane\n", i);
+			printf("coordinates are\nX = %f\nY = %f\nZ = %f\n", temp->coor.x, temp->coor.y, temp->coor.z);
+			printf("3d normalized orientation vectors are\nX = %f\nY = %f\nZ = %f\n", temp->coor3d.x, temp->coor3d.y, temp->coor3d.z);
+			printf("colors are\nR = %i\nG = %i\nB = %i\n", temp->color.R, temp->color.G, temp->color.B);
+		}
 		temp = temp->next;
 		i++;
 	}
@@ -83,8 +90,8 @@ static void	get_values(char *line, t_minirt *rt)
 		add_sphere(values, rt);
 	else if (ft_strcmp(values[0], "pl") == 0)
 	{
-		printf("going to add plane\n");
-		//add_plane(values, rt);
+		printf("add plane\n");
+		add_plane(values, rt);
 	}
 	else if (ft_strcmp(values[0], "cy") == 0)
 	{
