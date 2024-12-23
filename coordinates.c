@@ -6,7 +6,7 @@
 /*   By: sataskin <sataskin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 11:29:16 by sataskin          #+#    #+#             */
-/*   Updated: 2024/12/10 13:07:32 by sataskin         ###   ########.fr       */
+/*   Updated: 2024/12/23 15:18:40 by sataskin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static int	check_coor(char *values)
 	{
 		if (ft_isdigit(values[i]))
 			i++;
-		else if (values[i] == ' ')
+		else if (values[i] == ' ' || values[i] == '.')
 			i++;
 		else if (values[i] == ',' && values[i + 1] != ',')
 		{

@@ -6,7 +6,7 @@
 /*   By: sataskin <sataskin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 11:40:12 by sataskin          #+#    #+#             */
-/*   Updated: 2024/12/11 12:31:52 by sataskin         ###   ########.fr       */
+/*   Updated: 2024/12/23 15:23:18 by sataskin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,10 +74,10 @@ typedef struct s_arg
 	int L;
 	float bright;
 	int sp;
-	int diameter;
+	float diameter;
 	int pl;
 	int cy;
-	int height;
+	float height;
 	struct s_arg *next;
 } t_arg;
 
@@ -85,7 +85,7 @@ typedef struct s_minirt
 {
 	t_arg	*l_list;
 	char	*line;
-	
+	int		fd;
 } t_minirt;
 
 void	check_content(char *file, t_minirt *rt);
@@ -97,7 +97,7 @@ void	add_camera(char **values, t_minirt *rt);
 void	add_light(char **values, t_minirt *rt);
 void	add_sphere(char **values, t_minirt *rt);
 void	add_plane(char **values, t_minirt *rt);
-
+void	add_cylinder(char **values, t_minirt *rt);
 
 /*		PARSING FUNCTIONS		*/
 int		argument_count(char **values, int amount);
