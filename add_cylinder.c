@@ -6,31 +6,13 @@
 /*   By: sataskin <sataskin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 12:41:41 by sataskin          #+#    #+#             */
-/*   Updated: 2024/12/23 15:24:40 by sataskin         ###   ########.fr       */
+/*   Updated: 2024/12/27 11:53:26 by sataskin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniRT.h"
 
-static int	add_height(char *str, t_arg *new)
-{
-	int		i;
 
-	i = 0;
-    while (str[i] != '\0')
-	{
-		if (i == 0 && str[i] == '-')
-			i++;
-		if (ft_isdigit(str[i]) || str[i] == '.')
-			i++;
-		else
-			return (1);
-	}
-	if (ft_strlen(str) > 6)
-		return (1);
-	new->height = ft_atof(str);
-	return (0);
-}
 
 static int	arguments(char **values, int amount)
 {
@@ -66,7 +48,6 @@ void	add_cylinder(char **values, t_minirt *rt)
 	}
 	new->next = NULL;
 	new->cy = 1; 
-    printf("I am in add cylinder\n");
 	if (add_threed(values[2], new) == 1 || add_height(values[4], new) == 1
     || add_diameter(values[3], new) == 1 || add_coor(values[1], new) == 1
     || add_colors(values[5], new) == 1)

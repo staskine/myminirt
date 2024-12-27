@@ -6,7 +6,7 @@
 /*   By: sataskin <sataskin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 11:40:12 by sataskin          #+#    #+#             */
-/*   Updated: 2024/12/23 15:23:18 by sataskin         ###   ########.fr       */
+/*   Updated: 2024/12/27 11:54:31 by sataskin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@
 # include "libft/libft.h"
 # include <stdio.h> // delete me please
 
+/*
+Acceptable values = 000.000 and -000.000
+*/
 /*
 	What each argument in the struct is:
 	int A = Ambient Lighting (need below);
@@ -110,6 +113,9 @@ int		add_coor(char *values, t_arg *new);
 int		add_threed(char *values, t_arg *new);
 int		add_horizontal(char *values, t_arg *new);
 int		add_diameter(char *str, t_arg *new);
+int		val_num(char **val);
+int		add_height(char *str, t_arg *new);
+
 
 
 /*		MAKING LINKED lIST		*/

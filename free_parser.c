@@ -6,7 +6,7 @@
 /*   By: sataskin <sataskin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 14:53:55 by sataskin          #+#    #+#             */
-/*   Updated: 2024/12/03 14:02:19 by sataskin         ###   ########.fr       */
+/*   Updated: 2024/12/27 11:24:08 by sataskin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void free_split(char **str)
 {
 	int i;
 	i = 0;
-	while (str[i])
+	while (str[i] != NULL)
 	{
 		free(str[i]);
 		i++;

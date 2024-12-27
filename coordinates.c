@@ -6,7 +6,7 @@
 /*   By: sataskin <sataskin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 11:29:16 by sataskin          #+#    #+#             */
-/*   Updated: 2024/12/23 15:18:40 by sataskin         ###   ########.fr       */
+/*   Updated: 2024/12/27 11:42:37 by sataskin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,13 +64,11 @@ int	add_coor(char *values, t_arg *new)
 	coor = ft_split(values, ',');
 	if (!coor)
 		return (1);
-	new->coor.x = ft_atoi(coor[0]);
-	new->coor.y = ft_atoi(coor[1]);
-	new->coor.z = ft_atoi(coor[2]);
-	if ((ft_strlen(coor[0]) > 4 || (new->coor.x < 0 && ft_strlen(coor[0]) > 5)) 
-		|| (ft_strlen(coor[1]) > 4 || (new->coor.y < 0 && ft_strlen(coor[1]) > 5))
-		|| (ft_strlen(coor[2]) > 4 || (new->coor.z < 0 && ft_strlen(coor[2]) > 5)))
+	if (val_num(coor) == 1)
 		return(free_minirt_coor(coor));
+	new->coor.x = ft_atof(coor[0]);
+	new->coor.y = ft_atof(coor[1]);
+	new->coor.z = ft_atof(coor[2]);
 	free_split(coor);
 	return (0);
 }

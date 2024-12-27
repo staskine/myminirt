@@ -1,20 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lighting_ratio.c                                   :+:      :+:    :+:   */
+/*   val_num.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sataskin <sataskin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/21 10:47:43 by sataskin          #+#    #+#             */
-/*   Updated: 2024/12/27 11:49:10 by sataskin         ###   ########.fr       */
+/*   Created: 2024/12/27 10:54:12 by sataskin          #+#    #+#             */
+/*   Updated: 2024/12/27 11:52:01 by sataskin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniRT.h"
-
-/* FORMAT 
-		 ambient lighting ratio in range [0.0,1.0]: 0.2
-*/
 
 static int  val_post_dot(char *str)
 {
@@ -71,12 +67,19 @@ static int  val_string(char *str)
         return (1);
     return (0);
 }
-int	add_lighting_ratio(char *str, t_arg *new)
+
+int val_num(char **val)
 {
-	if (val_string(str) == 1)
-		return (1);
-	new->l_rat = ft_atof(str);
-	if (new->l_rat > 1.0 || new->l_rat < 0)
-		return (1);
-	return (0);
+    int i;
+
+    i = 1;
+    while (val[i] != NULL)
+    {
+        if (val_string(val[i]) == 1)
+            return (1);
+        i++;
+    }
+    if (i == 0)
+        return (1);
+    return (0);
 }

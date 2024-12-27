@@ -6,7 +6,7 @@
 #    By: sataskin <sataskin@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/29 17:03:00 by sataskin          #+#    #+#              #
-#    Updated: 2024/12/23 15:12:08 by sataskin         ###   ########.fr        #
+#    Updated: 2024/12/27 11:54:46 by sataskin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ LIBFT = $(LIBFTPATH)/libft.a
 SRCS = add_ambient.c \
 		add_camera.c \
 		add_cylinder.c \
+		add_height.c \
 		add_light.c \
 		add_plane.c \
 		add_sphere.c \
@@ -37,6 +38,7 @@ SRCS = add_ambient.c \
 		make_list.c \
 		orientation_vector.c \
 		parsing_functions.c \
+		val_num.c \
 		main.c
 
 OBJS= $(SRCS:.c=.o)

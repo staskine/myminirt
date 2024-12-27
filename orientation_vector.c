@@ -6,7 +6,7 @@
 /*   By: sataskin <sataskin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 11:34:53 by sataskin          #+#    #+#             */
-/*   Updated: 2024/12/10 13:17:20 by sataskin         ###   ########.fr       */
+/*   Updated: 2024/12/27 11:50:27 by sataskin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	add_threed(char *values, t_arg *new)
 	or = ft_split(values, ',');
 	if (!or)
 		return (1);
-	if (or[0][0] == '.' || or[1][0] == '.' || or[2][0] == '.')
+	if (val_num(or) == 1)
 		return(free_minirt_or(or));
 	new->coor3d.x = ft_atof(or[0]);
 	new->coor3d.y = ft_atof(or[1]);
@@ -65,10 +65,6 @@ int	add_threed(char *values, t_arg *new)
 	if (new->coor3d.x > 1 || new->coor3d.x < -1 || new->coor3d.y > 1
 		|| new->coor3d.y < -1 || new->coor3d.z > 1 || new->coor3d.z < -1)
 		return (1);
-	if ((ft_strlen(or[0]) > 3 || (new->coor3d.x < 0 && ft_strlen(or[0]) > 4)) 
-		|| (ft_strlen(or[1]) > 3 || (new->coor3d.y < 0 && ft_strlen(or[1]) > 4))
-		|| (ft_strlen(or[2]) > 3 || (new->coor3d.z < 0 && ft_strlen(or[2]) > 4)))
-		return(free_minirt_or(or));
 	free_split(or);
 	return (0);
 }

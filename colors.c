@@ -6,7 +6,7 @@
 /*   By: sataskin <sataskin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 10:53:45 by sataskin          #+#    #+#             */
-/*   Updated: 2024/12/10 11:08:55 by sataskin         ###   ########.fr       */
+/*   Updated: 2024/12/27 11:51:12 by sataskin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ static int	check_colors(char *values)
 	while (values[i] != '\0')
 	{
 		if (ft_isdigit(values[i]))
-			i++;
-		else if (values[i] == ' ')
 			i++;
 		else if (values[i] == ','  && values[i + 1] != ',')
 		{
@@ -57,12 +55,8 @@ int	add_colors(char *values, t_arg *new)
 	colors = ft_split(values, ',');
 	if (!colors)
 		return (1);
-	while (colors[i] && i < 3)
-	{
-		if (ft_strlen(colors[i]) > 3)
-			return(free_minirt_c(colors));
-		i++;
-	}
+	if (val_num(colors) == 1)
+		return(free_minirt_c(colors));
 	new->color.R = ft_atoi(colors[0]);
 	if (new->color.R > 255 || new->color.R < 0)
 		return(free_minirt_c(colors));
