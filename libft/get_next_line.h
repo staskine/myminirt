@@ -6,7 +6,7 @@
 /*   By: sataskin <sataskin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 15:30:07 by sataskin          #+#    #+#             */
-/*   Updated: 2024/10/16 11:19:01 by sataskin         ###   ########.fr       */
+/*   Updated: 2024/12/27 12:28:54 by sataskin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@
 # include <unistd.h>
 # include "libft.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 100
-# endif
+# define BUFFER_SIZE 1
 
 # define FD_SIZE 4096
 

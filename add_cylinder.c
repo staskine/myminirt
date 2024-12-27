@@ -6,7 +6,7 @@
 /*   By: sataskin <sataskin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 12:41:41 by sataskin          #+#    #+#             */
-/*   Updated: 2024/12/27 12:01:07 by sataskin         ###   ########.fr       */
+/*   Updated: 2024/12/27 12:32:24 by sataskin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void	add_cylinder(char **values, t_minirt *rt)
     || add_colors(values[5], new) == 1)
 	{
 		free_split(values);
+		free(new);
 		free_minirt(rt, "Error: Invalid Input\n");		
 	}
 	ft_lstadd_back_rt(&rt->l_list, new);

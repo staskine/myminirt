@@ -6,7 +6,7 @@
 /*   By: sataskin <sataskin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:42:29 by sataskin          #+#    #+#             */
-/*   Updated: 2024/12/23 15:23:39 by sataskin         ###   ########.fr       */
+/*   Updated: 2024/12/27 12:26:42 by sataskin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,10 +100,7 @@ static void	get_values(char *line, t_minirt *rt)
 	else if (ft_strcmp(values[0], "pl") == 0)
 		add_plane(values, rt);
 	else if (ft_strcmp(values[0], "cy") == 0)
-	{
-		printf("going to add cylinder\n");
 		add_cylinder(values, rt);
-	}
 	else
 		free_minirt(rt, "ERROR: Invalid Input in FILE\n");
 	free_split(values);
